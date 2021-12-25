@@ -59,22 +59,60 @@ li {
 */
 
 header {
-    margin: 3rem 10rem;
+    margin: 2rem 10rem;
 }
 
 main {
-    margin: 3rem 10rem;
+    
 }
 
-main .post-list {
+main .main-visual {
+    width: 100%;
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+main .main-visual h1 {
+    margin: 0;
+    padding: 3rem 10rem;
+    color: #fff;
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+main .main-visual::after {
+    background: linear-gradient(25deg, rgba(0,201,255,0.7), rgba(146,254,157,0.7));
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+main .info-area {
+    margin: 2rem 10rem;
+}
+
+main .post-area {
+    margin: 2rem 10rem;
+}
+
+main .post-area .post-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     justify-content: space-between;
     font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
-main .post-list .post-item {
+main .post-area .post-list .post-item {
     margin-bottom: 1.4rem;
     /* display: flex; */
     position: relative;
@@ -97,25 +135,26 @@ main .post-list .post-item {
     background-color: rgba(0, 0, 0, 0.4);
 } */
 
-main .post-list .post-item .post-img img {
+main .post-area .post-list .post-item .post-img img {
     transition: 0.4s;
 }
 
-main .post-list .post-item a:hover .post-img img {
-    filter: brightness(50%) grayscale(100%);
+main .post-area .post-list .post-item a:hover .post-img img {
+    /* filter: brightness(50%) grayscale(100%); */
+    filter: brightness(50%);
 }
 
-main .post-list .post-item .post-img {
+main .post-area .post-list .post-item .post-img {
     position: relative;
 }
 
-main .post-list .post-item .post-img::before {
+main .post-area .post-list .post-item .post-img::before {
     display: block;
     content: '';
     padding-top: 100%;
 }
 
-main .post-list .post-item .post-img img {
+main .post-area .post-list .post-item .post-img img {
     position: absolute;
     top: 0;
     width: 100%;
@@ -123,27 +162,27 @@ main .post-list .post-item .post-img img {
     object-fit: cover; /* Edge非対応 */
 }
 
-main .post-list .post-item .post-desc {
+main .post-area .post-list .post-item .post-desc {
     /* margin: 1rem; */
     padding: 1rem;
 }
 
-main .post-list .post-item .post-desc .post-tag {
+main .post-area .post-list .post-item .post-desc .post-tag {
     /* margin-top: 1rem; */
 }
 
-main .post-list .post-item .post-desc > * {
+main .post-area .post-list .post-item .post-desc > * {
     margin: 0.5rem 0;
 }
 
-main .post-list .post-item .post-desc .post-tag span {
+main .post-area .post-list .post-item .post-desc .post-tag span {
     margin-right: 0.5rem;
     border: #aaa 1px solid;
     padding: 0.3rem 0.5rem;
     border-radius: 5px;
 }
 
-main .post-list .post-item .post-desc .post-date {
+main .post-area .post-list .post-item .post-desc .post-date {
     text-align: right;
 }
 
