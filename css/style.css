@@ -47,10 +47,26 @@ li {
 	list-style-type: none;
 }
 
+.only-pc {
+    display: block;
+}
+
+.only-sp {
+    display: none;
+}
+
 @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
     html {
 
+    }
+    
+    .only-pc {
+        display: none;
+    }
+
+    .only-sp {
+        display: block;
     }
 }
 
@@ -62,8 +78,14 @@ header {
     margin: 2rem 10rem;
 }
 
+@media screen and (max-width: 480px) {
+    header {
+        margin: 0;
+    }
+}
+
 main {
-    
+    position: relative;
 }
 
 main .main-visual {
@@ -76,15 +98,6 @@ main .main-visual {
     margin-bottom: 2rem;
 }
 
-main .main-visual h1 {
-    margin: 0;
-    padding: 3rem 10rem;
-    color: #fff;
-    font-size: 3rem;
-    position: relative;
-    z-index: 1;
-}
-
 main .main-visual::after {
     background: linear-gradient(25deg, rgba(0,201,255,0.7), rgba(146,254,157,0.7));
     content: '';
@@ -95,29 +108,156 @@ main .main-visual::after {
     bottom: 0;
 }
 
+@media screen and (max-width: 480px) {
+    main .main-visual {
+        height: 30rem;
+    }
+}
+
+main .main-visual .text-area {
+    padding: 0 15rem;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+
+    top: 8rem;
+    font-size: 4rem;
+}
+
+@media screen and (max-width: 480px) {
+    main .main-visual .text-area {
+        top: 6rem;
+        padding: 0 0 0 2rem;
+        font-size: 2.5rem;
+    }
+}
+
+/* main .main-visual .text-area .message {
+    display: block;
+    position: absolute;
+    top: 3rem;
+    font-size: 3rem;
+} */
+
+/* @media screen and (max-width: 480px) {
+    main .main-visual .text-area .message {
+        font-size: 2rem;
+    }
+} */
+
+main .main-visual .info-area2 {
+    /* display: block; */
+    /* vertical-align: bottom; */
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: #000;
+
+    bottom: 3rem;
+    font-size: 1.5rem;
+    /* display: inline-block;
+    vertical-align: bottom; */
+}
+
+@media screen and (max-width: 480px) {
+    main .main-visual .info-area2 {
+        font-size: 1rem;
+    }
+}
+
+main .main-visual .info-area2 .info-list2 {
+    position: absolute;
+    bottom: 0;
+}
+
+main .main-visual .info-area2 .info-list2 .info-item2 {
+    margin-top: 0.5rem;
+    background-color: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.4s;
+}
+
+main .main-visual .info-area2 .info-list2 .info-item2:hover {
+    background-color: #ccc;
+}
+
+main .main-visual .info-area2 .info-list2 .info-item2 a {
+    display: block;
+    padding-left: 15rem;
+    padding-right: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    main .main-visual .info-area2 .info-list2 .info-item2 a {
+        padding-left: 2rem;
+    }
+}
+
+main .main-visual .info-area2 .info-list2 .info-item2 .title {
+    margin-left: 0.5rem;
+}
+
 main .info-area {
-    margin: 2rem 10rem;
+    margin: 2rem 15rem;
 }
 
 main .post-area {
-    margin: 2rem 10rem;
+    margin: 2rem 15rem;
+}
+
+@media screen and (max-width: 480px) {
+    main .info-area {
+        width: 85%;
+        max-width: 360px;
+        margin: 1rem auto;
+    }
+    main .post-area {
+        width: 85%;
+        max-width: 360px;
+        margin: 1rem auto 6rem;
+    }
 }
 
 main .post-area .post-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-content: center;
     font-size: 0.9rem;
     margin-top: 2rem;
+    /* margin-right: -0.5rem; */
+    margin-left: -0.5rem;
+    /* padding-right: -1.4rem;
+    padding-left: -1.4rem; */
+}
+
+@media screen and (max-width: 480px) {
+    main .post-area .post-list {
+        display: block;
+    }
 }
 
 main .post-area .post-list .post-item {
-    margin-bottom: 1.4rem;
+    width: 25%;
+    min-width: 18rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+main .post-area .post-list .post-item .post-item-inner {
+    /* box-sizing: border-box; */
+    /* padding: 1.4rem; */
+    /* margin-bottom: 1.4rem; */
     /* display: flex; */
     position: relative;
     /* justify-content: center; */
-    width: 24%;
     /* cursor: pointer; */
     box-shadow: 0 5px 15px 0 rgb(0 0 0 / 20%);
     border: #aaa 1px solid;
@@ -125,36 +265,32 @@ main .post-area .post-list .post-item {
     overflow: hidden; /* border-radiusはみ出し防止 */
 }
 
-/* main .post-list .post-item a::before {
-    content: '';
-    position: absolute;
-    transition: background-color 0.5s;
-} */
+@media screen and (max-width: 480px) {
+    main .post-area .post-list .post-item {
+        width: 100%;
+    }
+}
 
-/* main .post-list .post-item a:hover::before {
-    background-color: rgba(0, 0, 0, 0.4);
-} */
-
-main .post-area .post-list .post-item .post-img img {
+main .post-area .post-list .post-item .post-item-inner .post-img img {
     transition: 0.4s;
 }
 
-main .post-area .post-list .post-item a:hover .post-img img {
+main .post-area .post-list .post-item .post-item-inner a:hover .post-img img {
     /* filter: brightness(50%) grayscale(100%); */
     filter: brightness(50%);
 }
 
-main .post-area .post-list .post-item .post-img {
+main .post-area .post-list .post-item .post-item-inner .post-img {
     position: relative;
 }
 
-main .post-area .post-list .post-item .post-img::before {
+main .post-area .post-list .post-item .post-item-inner .post-img::before {
     display: block;
     content: '';
     padding-top: 100%;
 }
 
-main .post-area .post-list .post-item .post-img img {
+main .post-area .post-list .post-item .post-item-inner .post-img img {
     position: absolute;
     top: 0;
     width: 100%;
@@ -162,42 +298,63 @@ main .post-area .post-list .post-item .post-img img {
     object-fit: cover; /* Edge非対応 */
 }
 
-main .post-area .post-list .post-item .post-desc {
+main .post-area .post-list .post-item .post-item-inner .post-desc {
     /* margin: 1rem; */
-    padding: 1rem;
+    padding: 0.5rem 0.8rem;
 }
 
-main .post-area .post-list .post-item .post-desc .post-tag {
+main .post-area .post-list .post-item .post-item-inner .post-desc .post-tag {
     /* margin-top: 1rem; */
 }
 
-main .post-area .post-list .post-item .post-desc > * {
-    margin: 0.5rem 0;
+main .post-area .post-list .post-item .post-item-inner .post-desc > * {
+    margin-bottom: 0.5rem;
 }
 
-main .post-area .post-list .post-item .post-desc .post-tag span {
+main .post-area .post-list .post-item .post-item-inner .post-desc .post-tag span {
+    display: inline-block;
     margin-right: 0.5rem;
     border: #aaa 1px solid;
     padding: 0.3rem 0.5rem;
     border-radius: 5px;
 }
 
-main .post-area .post-list .post-item .post-desc .post-date {
+main .post-area .post-list .post-item .post-item-inner .post-desc .post-date {
     text-align: right;
 }
 
+main .scroll-top {
+    position: absolute;
+    right: 5rem;
+    bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+    main .scroll-top {
+        right: 2rem;
+        bottom: -5rem;
+    }
+}
+
+main .scroll-top a i {
+    font-size: 4rem;
+}
+
 footer {
-    margin: 2rem 10rem;
+    padding: 2rem 10rem;
+    border-top: #000 1px solid;
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 2rem;
+    }
 }
 
 footer .copyright {
-    margin-top: 1rem;
+
 }
 
 footer .copyright p {
     text-align: center;
-}
-
-@media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
 }
