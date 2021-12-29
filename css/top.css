@@ -1,92 +1,8 @@
 @charset "utf-8";
 
 /*
-
-px      borderやboxshadowやoutline等の他要素に関わらず常にサイズが一定のもの
-%	    htmlタグでのフォントサイズの指定
-        heightやwidthなど
-rem	    margin/padding/font-sizeなど
-em	    メディアクリ
-        remと同じ用途で親要素を基準にしたい場合(頻度は少ない)
-vh,vw   全体的なレイアウトで%の代わりに使用する場合もある
-
-*/
-
-/*
-//  common
-*/
-
-html {
-    font-size: 80%;
-    overflow-y: scroll;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    background: #FFF;
-    font-family: Verdana, "ＭＳ Ｐゴシック", sans-serif;
-    letter-spacing: 0;
-    line-height:1.6;
-}
-
-body * {
-
-}
-
-/* p {
-	margin:0 0 1em 0;
-} */
-
-a {
-    color : inherit;
-    text-decoration: none;
-}
-
-li {
-	list-style-type: none;
-}
-
-.only-pc {
-    display: block;
-}
-
-.only-sp {
-    display: none;
-}
-
-@media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
-    html {
-
-    }
-    
-    .only-pc {
-        display: none;
-    }
-
-    .only-sp {
-        display: block;
-    }
-}
-
-/*
 //  top
 */
-
-header {
-    margin: 2rem 10rem;
-}
-
-@media screen and (max-width: 480px) {
-    header {
-        margin: 0;
-    }
-}
-
-main {
-    position: relative;
-}
 
 main .main-visual {
     width: 100%;
@@ -147,7 +63,7 @@ main .main-visual .text-area {
     }
 } */
 
-main .main-visual .info-area2 {
+main .main-visual .info-area {
     /* display: block; */
     /* vertical-align: bottom; */
     padding: 0;
@@ -165,17 +81,17 @@ main .main-visual .info-area2 {
 }
 
 @media screen and (max-width: 480px) {
-    main .main-visual .info-area2 {
+    main .main-visual .info-area {
         font-size: 1rem;
     }
 }
 
-main .main-visual .info-area2 .info-list2 {
+main .main-visual .info-area .info-list {
     position: absolute;
     bottom: 0;
 }
 
-main .main-visual .info-area2 .info-list2 .info-item2 {
+main .main-visual .info-area .info-list .info-item {
     margin-top: 0.5rem;
     background-color: #fff;
     border-top-right-radius: 5px;
@@ -183,34 +99,30 @@ main .main-visual .info-area2 .info-list2 .info-item2 {
     transition: 0.4s;
 }
 
-main .main-visual .info-area2 .info-list2 .info-item2:hover {
+main .main-visual .info-area .info-list .info-item:hover {
     background-color: #ccc;
 }
 
 @media screen and (max-width: 480px) {
-    main .main-visual .info-area2 .info-list2 .info-item2:hover {
+    main .main-visual .info-area .info-list .info-item:hover {
         background-color: #fff;
     }
 }
 
-main .main-visual .info-area2 .info-list2 .info-item2 a {
+main .main-visual .info-area .info-list .info-item a {
     display: block;
     padding-left: 15rem;
     padding-right: 1rem;
 }
 
 @media screen and (max-width: 480px) {
-    main .main-visual .info-area2 .info-list2 .info-item2 a {
+    main .main-visual .info-area .info-list .info-item a {
         padding-left: 2rem;
     }
 }
 
-main .main-visual .info-area2 .info-list2 .info-item2 .title {
+main .main-visual .info-area .info-list .info-item .title {
     margin-left: 0.5rem;
-}
-
-main .info-area {
-    margin: 2rem 15rem;
 }
 
 main .post-area {
@@ -218,15 +130,10 @@ main .post-area {
 }
 
 @media screen and (max-width: 480px) {
-    main .info-area {
-        width: 85%;
+    main .post-area {
+        width: 90%;
         max-width: 360px;
         margin: 1rem auto;
-    }
-    main .post-area {
-        width: 85%;
-        max-width: 360px;
-        margin: 1rem auto 6rem;
     }
 }
 
@@ -259,8 +166,8 @@ main .post-area .post-list .post-item {
 
 main .post-area .post-list .post-item .post-item-inner {
     position: relative;
-    box-shadow: 0 5px 15px 0 rgb(0 0 0 / 20%);
-    border: #aaa 1px solid;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: #888 1px solid;
     border-radius: 10px;
     overflow: hidden; /* border-radiusはみ出し防止 */
 }
@@ -320,47 +227,11 @@ main .post-area .post-list .post-item .post-item-inner .post-desc > * {
 main .post-area .post-list .post-item .post-item-inner .post-desc .post-tag span {
     display: inline-block;
     margin-right: 0.5rem;
-    border: #aaa 1px solid;
-    padding: 0.3rem 0.5rem;
+    border: #888 1px solid;
+    padding: 0.1rem 0.5rem;
     border-radius: 5px;
 }
 
 main .post-area .post-list .post-item .post-item-inner .post-desc .post-date {
     text-align: right;
-}
-
-main .scroll-top {
-    position: absolute;
-    right: 5rem;
-    bottom: 0;
-}
-
-@media screen and (max-width: 480px) {
-    main .scroll-top {
-        right: 2rem;
-        bottom: -5rem;
-    }
-}
-
-main .scroll-top a i {
-    font-size: 4rem;
-}
-
-footer {
-    padding: 2rem 10rem;
-    border-top: #000 1px solid;
-}
-
-@media screen and (max-width: 480px) {
-    footer {
-        padding: 2rem;
-    }
-}
-
-footer .copyright {
-
-}
-
-footer .copyright p {
-    text-align: center;
 }

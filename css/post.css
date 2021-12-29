@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/*
+//  post
+*/
+
+main .image {
+    margin-bottom: 2rem;
+    padding: 0 10rem;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    main .image {
+        margin: 0 auto 1rem;
+        padding: 0;
+        width: 90%;
+    }
+}
+
+main .image img {
+    max-height: 1000px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 480px) {
+    main .image img {
+        width: 100%;
+    }
+}
+
+main .caption {
+    margin: 0 auto 2rem auto;
+    padding: 0;
+    width: 70rem;
+}
+
+@media screen and (max-width: 480px) {
+    main .caption {
+        margin: 0 auto 1rem;
+        width: 90%;
+    }
+}
+
+main .caption > * {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    main .caption > * {
+        margin-bottom: 0.5rem;
+    }
+}
+
+main .caption .title {
+    font-size: 2.2rem;
+    border-bottom: #888 1px solid;
+}
+
+@media screen and (max-width: 480px) {
+    main .caption .title {
+        font-size: 1.6rem;
+    }
+}
+
+main .caption .description {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 480px) {
+    main .caption .description {
+        font-size: 1rem;
+    }
+}
+
+main .caption .date {
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+@media screen and (max-width: 480px) {
+    main .caption .date {
+        font-size: 1rem;
+    }
+}
+
+main .caption .tag-list {
+    font-size: 1.2rem;
+    color: #185;
+}
+
+@media screen and (max-width: 480px) {
+    main .caption .tag-list {
+        font-size: 1rem;
+    }
+}
+
+main .caption .tag-list a {
+    display: inline-block;
+    margin-right: 0.1rem;
+    border: #185 1px solid;
+    padding: 0.1rem 0.5rem;
+    border-radius: 5px;
+}
+
+main .pagination {
+    margin: 0 auto;
+    padding: 0;
+    width: 50rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #185;
+}
+
+@media screen and (max-width: 480px) {
+    main .pagination {
+        width: 90%;
+        font-size: 1rem;
+    }
+}
+
+main .pagination .prev,span {
+    margin-right: 2rem;
+}
