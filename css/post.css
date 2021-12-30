@@ -5,6 +5,7 @@
 */
 
 main .image {
+    margin-top: 3rem;
     margin-bottom: 2rem;
     padding: 0 10rem;
     width: 100%;
@@ -13,7 +14,7 @@ main .image {
 
 @media screen and (max-width: 480px) {
     main .image {
-        margin: 0 auto 1rem;
+        margin: 1.5rem auto 1rem;
         padding: 0;
         width: 90%;
     }
